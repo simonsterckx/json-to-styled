@@ -1,6 +1,6 @@
 {
   "name": "json-to-styled",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Converts JS-style objects to styled-components",
   "main": "dist/json-to-styled.cjs.js",
   "module": "dist/json-to-styled.esm.js",
