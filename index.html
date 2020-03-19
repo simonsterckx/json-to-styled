@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      padding: 4%;
+      font-family: sans-serif;
+    }
+
+    textarea {
+      width: 100%;
+      border: 2px solid gray;
+      padding: 8px;
+      font-size: 12px;
+      font-family: monospace;
+    }
+
+    form>* {
+      display: block;
+      margin-bottom: 10px;
+      ;
+    }
+
+    button {
+      padding: 20px;
+      font-size: 20px;
+      color: white;
+      background: darkcyan;
+      cursor: pointer;
+    }
+
+    label {
+      color: darkcyan;
+      font-weight: bold;
+    }
+
+    #error {
+      color: darkred;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Welcome to JS-to-CSS generator (WIP)</h1>
+  <p>For those that prefer css styles compared to JS-object styles.
+    There are probably a lot of unhandled cases. Feel free to submit PRs.
+  </p>
+  <form action="" id="mainForm">
+
+    <label><input type="checkbox" name="isStyledComponents" id="isStyledComponents" checked="1"> Use styled-components
+    </label>
+    <label><input type="checkbox" name="isNativeSwitch" id="isNativeSwitch" checked="1"> For ReactNative</label>
+    <label><input type="checkbox" name="isTopLevelSwitch" id="isTopLevelSwitch"> Is top level</label>
+    <br>
+    <label for="constants">Constants (Use linebreaks to separate constants)</label>
+    <textarea name="constants" id="constants" rows="4" placeholder="Constants"></textarea>
+    <textarea name="json" id="json" rows="10" placeholder="The code..."></textarea>
+    <button>Transform to styled/css</button>
+  </form>
+
+  <br>
+  <pre>
+    <code id="result"></code>
+  </pre>
+  <p id="error"></p>
+
+  <script type="module" src="./web.js"></script>
+</body>
+
+</html>
