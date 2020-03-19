@@ -9,8 +9,13 @@ You might wanna manually change styled.div to styled.[element]
 https://simonsterckx.github.io/json-to-styled/
 From:
 
+npm i json-to-styled
+
 ```
-{
+import { performTransform } from "json-to-styled";
+
+console.log(
+  performTransform(`{
   todoCell: {
     backgroundColor: "white",
     borderColor: "whitesmoke",
@@ -21,10 +26,12 @@ From:
     paddingLeft: "10px",
     paddingRight: "10px"
   }
-};
+};`)
+);
+
 ```
 
-To:
+Outputs:
 
 ```
 export const StyledTodoCell = styled.View`
@@ -39,6 +46,6 @@ export const StyledTodoCell = styled.View`
 `
 ```
 
-## Note: uses Function()/eval so don't use it on a server, or a production environment
+## Warning: uses Function()/eval() so don't use it on a server or a production environment
 
 This project is licensed under the terms of the MIT license.
