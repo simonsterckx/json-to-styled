@@ -20,7 +20,7 @@ textarea.value = `{
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    borderTopWidth: width - 2,
+    width: width - 2,
     paddingLeft: "10px",
     paddingRight: "10px"
   }

@@ -1,10 +1,12 @@
 # JS-to-CSS generator (WIP)
 
 Just a small helper I created to make it easier to switch between React JS-style objects and styled-components styling
-Aimed at react-native but can be used quite easily with react-dom as well
+Aimed at react-native but can be used quite easily with react-dom as well.
+You might wanna manually change styled.div to styled.[element]
 
 # Example
 
+https://simonsterckx.github.io/json-to-styled/
 From:
 
 ```
