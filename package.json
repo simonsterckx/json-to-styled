@@ -2,8 +2,12 @@
   "name": "json-to-styled",
   "version": "0.1.0",
   "description": "Converts JS-style objects to styled-components",
-  "main": "lib/index.js",
+  "main": "dist/json-to-styled.cjs.js",
+  "module": "dist/json-to-styled.esm.js",
+  "browser": "dist/json-to-styled.umd.js",
   "scripts": {
+    "start": "rollup -c -w",
+    "build": "rollup -c",
     "test": "jest"
   },
   "keywords": [],
@@ -16,9 +20,13 @@
     "url": "git+https://github.com/simonsterckx/json-to-styled.git"
   },
   "license": "MIT",
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "rollup": "^1.29.0",
     "babel-jest": "^25.1.0",
     "jest": "^25.1.0"
   }

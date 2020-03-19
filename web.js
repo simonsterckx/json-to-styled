@@ -47,7 +47,7 @@ form.onsubmit = e => {
     errorTag.innerText = "";
   } catch (e) {
     result.innerHTML = "";
-    errorTag.innerText = e.message;
+    errorTag.innerText = `${e.message}\n${e.stack}`;
   }
 
   return false;

@@ -39,6 +39,6 @@ export const StyledTodoCell = styled.View`
 `
 ```
 
-## Note: uses eval() so don't use it on a server
+## Note: uses Function()/eval so don't use it on a server, or a production environment
 
 This project is licensed under the terms of the MIT license.
