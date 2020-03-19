@@ -7,7 +7,7 @@ export default [
   {
     input: "lib/index.js",
     output: {
-      name: "json-to-styled",
+      name: "JsonToStyled",
       file: pkg.browser,
       format: "umd"
     },

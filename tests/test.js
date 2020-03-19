@@ -1,4 +1,4 @@
-import { performTransform } from "../lib/index";
+import performTransform from "../lib/index";
 
 const example = `{
   todoCell: {

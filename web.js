@@ -1,4 +1,4 @@
-import { performTransform } from "./lib/index.js";
+import performTransform from "./lib/index.js";
 
 const form = document.querySelector("form");
 const constantsArea = document.getElementById("constants");
