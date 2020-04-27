@@ -10,7 +10,7 @@ const result = document.getElementById("result");
 const errorTag = document.getElementById("error");
 
 // Default constants
-constantsArea.value = `width`;
+constantsArea.value = `width\nheight\nStyleSheet.absoluteFillObject\nStyleSheet.hairlineWidth`;
 
 // Default example
 textarea.value = `{
@@ -23,12 +23,14 @@ textarea.value = `{
     width: width - 2,
     paddingLeft: "10px",
     paddingRight: "10px"
-  }
+  },
+  seperator: {
+    height: StyleSheet.hairlineWidth,
+    backgroundColor: '#ccc',
+  },
 }`;
 
-form.onsubmit = e => {
-  e.preventDefault();
-
+const handleFormSubmit = () => {
   try {
     const isTopLevel = isTopLevelSwitch.checked;
     const isStyledComponents = isStyledComponentsSwitch.checked;
@@ -40,7 +42,7 @@ form.onsubmit = e => {
       constants,
       isStyledComponents,
       isNative,
-      isTopLevel
+      isTopLevel,
     });
 
     result.innerHTML = styleString;
@@ -49,6 +51,12 @@ form.onsubmit = e => {
     result.innerHTML = "";
     errorTag.innerText = `${e.message}\n${e.stack}`;
   }
+};
 
+form.onsubmit = (e) => {
+  e.preventDefault();
+  handleFormSubmit();
   return false;
 };
+
+handleFormSubmit();

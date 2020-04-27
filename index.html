@@ -6,13 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>json-to-styled example</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       padding: 4%;
       font-family: sans-serif;
     }
 
     textarea {
-      width: 100%;
+      width: calc(100% - 20px);
       border: 2px solid gray;
       padding: 8px;
       font-size: 12px;
@@ -41,6 +45,29 @@
     #error {
       color: darkred;
     }
+
+    .codeView {
+      background: rgb(236, 250, 255);
+      color: rgb(17, 17, 82);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 20px;
+
+    }
+
+    .flexRow {
+      display: flex;
+    }
+
+    @media screen and (max-width: 800px) {
+      .flexRow {
+        display: block;
+      }
+    }
+
+    .flexRow * {
+      flex: 1 1 auto;
+    }
   </style>
 </head>
 
@@ -48,28 +75,38 @@
   <h1>Welcome to a JS-to-CSS generator (WIP)</h1>
   <p>For those that prefer css styles compared to JS-object styles.
     There are probably a lot of unhandled cases. Feel free to submit PRs.
+    <br />
+    Source: <a href="https://github.com/simonsterckx/json-to-styled">https://github.com/simonsterckx/json-to-styled</a>
   </p>
-  <p>Source: <a href="https://github.com/simonsterckx/json-to-styled">https://github.com/simonsterckx/json-to-styled</a>
+  <p>This effectively does the opposite of the package <a
+      href="https://github.com/styled-components/css-to-react-native">css-to-react-native</a>
+    <br />
+    Web example: <a href="https://csstox.surge.sh">https://csstox.surge.sh</a>
   </p>
-  <form action="" id="mainForm">
-    <label><input type="checkbox" name="isStyledComponents" id="isStyledComponents" checked="1"> Use styled-components
-    </label>
-    <label><input type="checkbox" name="isNativeSwitch" id="isNativeSwitch" checked="1"> For ReactNative</label>
-    <label><input type="checkbox" name="isTopLevelSwitch" id="isTopLevelSwitch"> Is top level</label>
-    <br>
-    <label for="constants">Constants (Use linebreaks to separate constants)</label>
-    <textarea name="constants" id="constants" rows="4" placeholder="Constants"></textarea>
-    <textarea name="json" id="json" rows="10" placeholder="The code..."></textarea>
-    <button>Transform to styled/css</button>
-  </form>
 
-  <br>
-  <pre>
-    <code id="result"></code>
+  <div class="flexRow">
+    <form action="" id="mainForm">
+      <h2>Options:</h2>
+
+      <label><input type="checkbox" name="isStyledComponents" id="isStyledComponents" checked="1"> Use styled-components
+      </label>
+      <label><input type="checkbox" name="isNativeSwitch" id="isNativeSwitch" checked="1"> For ReactNative</label>
+      <label><input type="checkbox" name="isTopLevelSwitch" id="isTopLevelSwitch"> Is top level</label>
+      <label for="constants">Constants (Use linebreaks to separate constants)</label>
+      <textarea name="constants" id="constants" rows="4" placeholder="Constants"></textarea>
+      <textarea name="json" id="json" rows="10" placeholder="The code..."></textarea>
+      <button>Transform to styled/css</button>
+    </form>
+    <div>
+      <h2>Result:</h2>
+      <pre class="codeView">
+      <code id="result"></code>
+    </div>
   </pre>
-  <p id="error"></p>
+    </div>
+    <p id="error"></p>
 
-  <script type="module" src="./web.js"></script>
+    <script type="module" src="./web.js"></script>
 </body>
 
 </html>
