@@ -24,7 +24,7 @@ textarea.value = `{
     paddingLeft: "10px",
     paddingRight: "10px"
   },
-  seperator: {
+  separator: {
     height: StyleSheet.hairlineWidth,
     backgroundColor: '#ccc',
   },
